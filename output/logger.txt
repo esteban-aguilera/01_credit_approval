@@ -1,0 +1,7 @@
+File Exists
+-----------
+
+Error: No existe la carpeta 'output'
+
+Error: No existe el archivo 'output/out.txt'
+
