@@ -207,7 +207,7 @@ def plot_probabilities(y_true, y_prob, how=None, figax=None, bins=None, xarr=Non
             warnings.warn(f"xarr is not used with how='{how}'")
             
         return plot_probabilities_hist(
-            y_true, y_prob, figax=figax, bins=bins,
+            y_true, y_prob, figax=figax, bins=bins, density=True,
             filename=filename, model_type=model_type
         )
     elif how == "kde":
