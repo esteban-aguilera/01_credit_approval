@@ -207,7 +207,7 @@ def plot_probabilities(y_true, y_prob, how=None, figax=None, bins=None, xarr=Non
             warnings.warn(f"xarr is not used with how='{how}'")
             
         return plot_probabilities_hist(
-            y_true, y_prob, figax=figax, bins=bins, density=True,
+            y_true, y_prob, figax=figax, bins=bins,
             filename=filename, model_type=model_type
         )
     elif how == "kde":
@@ -235,7 +235,10 @@ def plot_probabilities_hist(y_true, y_prob, figax=None, bins=None,
         paths.mkdir("/".join(filename.split("/")[:-1]))
 
     for y in np.sort(np.unique(y_true)):
-        ax.hist(y_prob[y_true == y], bins=bins, edgecolor="black", alpha=0.5, label=f"y = {y}")
+        ax.hist(
+            y_prob[y_true == y], bins=bins, density=True,
+            edgecolor="black", alpha=0.5, label=f"y = {y}"
+        )
     
     ax.legend()
     
