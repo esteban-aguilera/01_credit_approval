@@ -64,3 +64,9 @@ def capitalize(s:str, sep:str=None) -> str:
         sep = r"\s"
 
     return ' '.join([w.strip().capitalize() for w in re.split(sep, s)])
+
+
+def snake_case(s:str) -> str:
+    s = re.sub(r"\s+", "_", s.strip().lower())
+
+    return s

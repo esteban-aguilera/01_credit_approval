@@ -10,6 +10,10 @@ import time
 PATH_DATA = "data"
 PATH_OUTPUT = "output"
 
+SEED_TRAIN_TEST_SPLIT = 42
+SEED_RANDOM_OVER_SAMPLER = 42
+SEED_MODEL = 42
+
 
 # --------------------------------------------------------------------------------
 # Private Variables
